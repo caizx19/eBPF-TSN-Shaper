@@ -16,11 +16,13 @@ This repository contains the implementation of Asynchronous Traffic Shaper (ATS)
    git checkout 8efa26fcbf8a7f783fd1ce7dd2a409e9b7758df0
    git am ../kernel-patches/0001-bpf-net-Implement-eBPF-based-Asynchronous-Traffic-Sh.patch
 2. Compile, Register and attach eBPF programs:
+   ```bash
    cd tools/testing/selftests/bpf/
    make
    sudo bpftool struct_ops register bpf_qdisc_ats.o /sys/fs/bpf
    sudo tc qdisc add dev eth0 root handle 1:0 bpf_fifo
 3. Remove and unregister:
+   ```bash
    sudo tc qdisc delete dev eth0 root
    sudo bpftool struct_ops unregister name fifo
 
