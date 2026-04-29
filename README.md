@@ -20,11 +20,11 @@ This repository contains the implementation of Asynchronous Traffic Shaper (ATS)
    cd tools/testing/selftests/bpf/
    make
    sudo bpftool struct_ops register bpf_qdisc_ats.o /sys/fs/bpf
-   sudo tc qdisc add dev eth0 root handle 1:0 bpf_fifo
+   sudo tc qdisc add dev eth0 root handle 1:0 bpf_ats
 3. Remove and unregister:
    ```bash
    sudo tc qdisc delete dev eth0 root
-   sudo bpftool struct_ops unregister name fifo
+   sudo bpftool struct_ops unregister name bpf_ats
 
 ## About the Author 
 Zixi Cai Master's student at Lanzhou University, focusing on Linux kernel networking, eBPF, and Time-Sensitive Networking (TSN).
