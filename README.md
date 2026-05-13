@@ -15,6 +15,7 @@ This repository contains the implementation of Asynchronous Traffic Shaper (ATS)
    cd bpf-next
    git checkout 8efa26fcbf8a7f783fd1ce7dd2a409e9b7758df0
    git am ../kernel-patches/0001-bpf-net-Implement-eBPF-based-Asynchronous-Traffic-Sh.patch
+   make, install and reboot with the new kernel
 2. Compile, Register and attach eBPF programs:
    ```bash
    cd tools/testing/selftests/bpf/
